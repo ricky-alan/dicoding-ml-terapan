@@ -27,11 +27,11 @@ Dataset yang saya gunakan adalah dataset film dan rating dari MovieLens. Dataset
  
 Sumber: [MovieLens 20M Dataset](https://www.kaggle.com/datasets/grouplens/movielens-20m-dataset).
  
-**Deskripsi Data**:
+**Deskripsi Data**:  
 - movies: merupakan informasi mengenai film.
 - ratings: merupakan rating film yang diberikan oleh user.
  
-**Exploratory Data Analysis**
+**Exploratory Data Analysis**  
 - Menampilkan data movies  
   ![Movies](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/movies.png?raw=True)
  
@@ -85,14 +85,14 @@ Proses:
   ![Cosine Similarity](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_cosine_similarity.png?raw=True)
  
   Dari output diatas, dapat dilihat bahwa film Gaudi Afternoon (2001) 0.5% mirip dengan film Heaven Can Wait (1978) tapi tidak mirip sama sekali dengan film Strait-Jacket (1964).
-- Mendapatkan top-20 rekomendasi film.
+- Mendapatkan top-20 rekomendasi film.  
   Film pertama  
-  ![Film 1](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_film_1.png?raw=True)
+  ![Film 1](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_film_1.png?raw=True)  
   Rekomendasi  
   ![Rec Film 1](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_rec_film_1.png?raw=True)
  
   Film kedua  
-  ![Film 2](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_film_2.png?raw=True)
+  ![Film 2](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_film_2.png?raw=True)  
   Rekomendasi  
   ![Rec Film 2](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cb_rec_film_2.png?raw=True)
  
@@ -108,7 +108,7 @@ Proses:
  
 - Melakukan shuffling data agar distribusi data menjadi random dan menghindari overfitting.
 - Encoding data userId dan movieId. Hal ini dilakukan untuk memudahkan identifikasi data user dan film yang ada.
-- Split data, 90% untuk training, dan 10% untuk validation. Hal ini dilakukan untuk menguji keakuratan model yang telah dilatih.
+- Split data, 90% untuk training, dan 10% untuk validation. Hal ini dilakukan untuk menguji keakuratan model yang telah dilatih.  
 - Membuat arsitektur model.  
   ![Arsitektur Model](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cl_model.png?raw=True)
 - Training model menggunakan binary crossentropy loss function, adam optimizer dan metrik RMSE.  
@@ -117,30 +117,30 @@ Proses:
   Dari hasil training selama 3 epochs, diperoleh nilai error RMSE 0.1557, dan 0.1748 untuk data validasi.
  
   ![Visualisasi Metrik](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cl_visualisasi_metrik.png?raw=True)
-- Mendapatkan top-20 rekomendasi film.
+- Mendapatkan top-20 rekomendasi film.  
   Film yang pernah ditonton dan diberi rating tinggi oleh user 17759.  
-  ![Watched Movie](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cl_watched.png?raw=True)
+  ![Watched Movie](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cl_watched.png?raw=True)  
   Rekomendasi untuk user 17759.  
   ![Rec for User](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/cl_rec.png?raw=True)
  
-**Kelebihan Collaborative Filtering:**
+**Kelebihan Collaborative Filtering:**  
 - Model dapat merekomendasikan hal baru untuk di-explore oleh user.
 - Model dapat memberikan rekomendasi kepada user berdasarkan preferensi user lain yang mungkin mirip.
  
-**Kekurangan Collaborative Filtering:**
+**Kekurangan Collaborative Filtering:**  
 - Model membutuhkan data banyak user.
  
 ## Evaluation
  
 Metrik yang saya gunakan untuk model content based filtering adalah cosine similarity, sedangkan untuk model collaborative filtering, metrik yang saya gunakan adalah root mean squared error (RMSE).
  
-**Cosine Similarity**:
-Cosine Similarity diperoleh dari mengukur sudut cos antara dua vektor yang diproyeksikan dalam ruang multidimensi.
+**Cosine Similarity**:  
+Cosine Similarity diperoleh dari mengukur sudut cos antara dua vektor yang diproyeksikan dalam ruang multidimensi.  
 Rumus Cosine Similarity:  
 ![Rumus Cosine Sim](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/rumus_cosine_sim.png?raw=True)
  
-**Root Mean Squared Error**:
-Root Mean Squared Error atau RMSE diperoleh dari menghitung akar dari jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.
+**Root Mean Squared Error**:  
+Root Mean Squared Error atau RMSE diperoleh dari menghitung akar dari jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.  
 Rumus RMSE:  
 ![Rumus RMSE](https://github.com/ricky-alan/dicoding-ml-terapan/blob/main/S2_Recommendation_System/image/rumus_rmse.png?raw=True)
  
